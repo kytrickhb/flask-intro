@@ -67,7 +67,6 @@ def say_hello():
 @app.route('/greet', methods=["POST"])
 def greet_person():
     player = request.form.get("person")
-
     compliment = request.form.get("compliment")
 
     return """
