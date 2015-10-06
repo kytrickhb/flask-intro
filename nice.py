@@ -10,7 +10,19 @@ app = Flask(__name__)
 # route to handle the landing page of a website.
 @app.route('/')
 def start_here():
-    return "Hi! This is the home page."
+    return """
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Hi There!</title>
+        </head>
+        <body>
+            <a href="/hello">Hi!</a> 
+            This is the home page.
+        </body>
+    </html>
+
+    """
 
 # route to display a simple web page
 @app.route('/hello')
