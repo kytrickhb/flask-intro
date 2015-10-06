@@ -68,11 +68,7 @@ def say_hello():
 def greet_person():
     player = request.args.get("person")
 
-    AWESOMENESS = [
-        'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
-        'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
-
-    compliment = choice(AWESOMENESS)
+    compliment = request.args.get("compliment")
 
     return """
     <!DOCTYPE html>
@@ -81,7 +77,7 @@ def greet_person():
             <title>A Compliment</title>
         </head>
         <body>
-            Hi %s I think you're %s!
+            Hi, %s, I think you're %s!
         </body>
     </html>""" % (player, compliment)
 
