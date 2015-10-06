@@ -35,7 +35,7 @@ def say_hello():
         </head>
         <body>
             <h1>Hi There!</h1>
-            <form action="/greet">
+            <form action="/greet" method="POST"> 
                 <label>What's your name? <input type="text" name="person"></label>
                 <div>
                     <label>Select your compliment:
@@ -64,11 +64,11 @@ def say_hello():
 
     """
 
-@app.route('/greet')
+@app.route('/greet', methods=["POST"])
 def greet_person():
-    player = request.args.get("person")
+    player = request.form.get("person")
 
-    compliment = request.args.get("compliment")
+    compliment = request.form.get("compliment")
 
     return """
     <!DOCTYPE html>
